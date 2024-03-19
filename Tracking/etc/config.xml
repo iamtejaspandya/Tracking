@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <tejas_tracking>
+            <general>
+                <track_customer_connections>1</track_customer_connections>
+                <send_email>1</send_email>
+                <email_receiver>example@example.com</email_receiver>
+            </general>
+        </tejas_tracking>
+    </default>
+</config>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="tejas_tracking" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Customer Connections</label>
+            <tab>customer</tab>
+            <resource>Magento_Customer::customer</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer Tracking</label>
+                <field id="track_customer_connections" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Track Customer Connections?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable to track customer connections.</comment>
+                </field>
+                <field id="send_email" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send Email Notification?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable to send email notifications for customer connections.</comment>
+                    <depends>
+                        <field id="track_customer_connections">1</field>
+                    </depends>
+                </field>
+                <field id="email_receiver" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Receiver</label>
+                    <comment>Enter the email address where notifications will be sent.</comment>
+                    <depends>
+                        <field id="send_email">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
